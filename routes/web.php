@@ -6,6 +6,7 @@ use App\Http\Controllers\PegawaiController;
 use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
+use App\Http\Controllers\KopiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -96,3 +97,13 @@ Route::post('/siswa', [SiswaController::class, 'store'])->name('siswa.store');
 Route::get('/siswa/{nrp}/edit', [SiswaController::class, 'edit'])->name('siswa.edit');
 Route::put('/siswa/{nrp}', [SiswaController::class, 'update'])->name('siswa.update');
 Route::delete('/siswa/{nrp}', [SiswaController::class, 'destroy'])->name('siswa.destroy');
+
+
+//route CRUD kopi (Pra EAS)
+Route::get('/kopi', [KopiController::class, 'index'])->name('kopi.index');
+Route::get('/kopi/create', [KopiController::class, 'create'])->name('kopi.create');
+Route::post('/kopi/store', [KopiController::class, 'store'])->name('kopi.store');
+Route::get('/kopi/edit/{KodeKopi}', [KopiController::class, 'edit'])->name('kopi.edit');
+Route::put('/kopi/update/{KodeKopi}', [KopiController::class, 'update'])->name('kopi.update');
+Route::delete('/kopi/delete/{KodeKopi}', [KopiController::class, 'destroy'])->name('kopi.destroy');
+Route::get('/kopi/cari', [KopiController::class, 'cari'])->name('kopi.cari');
