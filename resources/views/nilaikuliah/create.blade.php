@@ -31,14 +31,14 @@
                     <label class="form-label">
                         Nilai Angka
                     </label>
-                    <input type="number" name="NilaiAngka" id="NilaiAngka" class="form-control">
+                    <input type="text" name="NilaiAngka" id="NilaiAngka" class="form-control">
                 </div>
 
                 <div class="mb-3">
                     <label class="form-label">
                         SKS
                     </label>
-                    <input type="number" name="SKS" id="SKS" class="form-control">
+                    <input type="text" name="SKS" id="SKS" class="form-control">
                 </div>
                 <br>
 
