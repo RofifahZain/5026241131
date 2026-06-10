@@ -7,6 +7,7 @@ use App\Http\Controllers\BlogController;
 use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KopiController;
+use App\Http\Controllers\NilaiController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -107,3 +108,7 @@ Route::get('/kopi/edit/{KodeKopi}', [KopiController::class, 'edit'])->name('kopi
 Route::put('/kopi/update/{KodeKopi}', [KopiController::class, 'update'])->name('kopi.update');
 Route::delete('/kopi/delete/{KodeKopi}', [KopiController::class, 'destroy'])->name('kopi.destroy');
 Route::get('/kopi/cari', [KopiController::class, 'cari'])->name('kopi.cari');
+
+Route::get('/nilaikuliah', [NilaiController::class, 'index'])->name('nilaikuliah.index');
+Route::get('/nilaikuliah/create', [NilaiController::class, 'create'])->name('nilaikuliah.create');
+Route::post('/nilaikuliah', [NilaiController::class, 'store'])->name('nilaikuliah.store');
