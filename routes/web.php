@@ -8,6 +8,7 @@ use App\Http\Controllers\PegawaiDBController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\KopiController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\KeranjangController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -109,6 +110,13 @@ Route::put('/kopi/update/{KodeKopi}', [KopiController::class, 'update'])->name('
 Route::delete('/kopi/delete/{KodeKopi}', [KopiController::class, 'destroy'])->name('kopi.destroy');
 Route::get('/kopi/cari', [KopiController::class, 'cari'])->name('kopi.cari');
 
+//route CRUD Nilai Kuliah
 Route::get('/nilaikuliah', [NilaiController::class, 'index'])->name('nilaikuliah.index');
 Route::get('/nilaikuliah/create', [NilaiController::class, 'create'])->name('nilaikuliah.create');
 Route::post('/nilaikuliah', [NilaiController::class, 'store'])->name('nilaikuliah.store');
+
+//route CRUD Keranjang Belanja
+Route::get('/keranjangbelanja', [KeranjangController::class, 'index'])->name('keranjangbelanja.index');
+Route::get('/keranjangbelanja/create', [KeranjangController::class, 'create'])->name('keranjangbelanja.create');
+Route::post('/keranjangbelanja', [KeranjangController::class, 'store'])->name('keranjangbelanja.store');
+Route::delete('/keranjangbelanja/delete/{ID}', [KeranjangController::class, 'destroy'])->name('keranjangbelanja.destroy');
